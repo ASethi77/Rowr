@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../nrf5_sdk_17.0.2"
+		}
+	],
+	"settings": {
+		"cmake.configureArgs": [
+			"-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/toolchain.cmake"
+		]
+	}
+}
