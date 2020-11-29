@@ -17,14 +17,14 @@ set(ARCH_FLAGS "-mthumb -mcpu=cortex-m0 -mfloat-abi=hard")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${NOSTDLIB_FLAG} ${ARCH_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${NOSTDLIB_FLAG} ${ARCH_FLAGS}")
 
-find_program(ARM_GCC arm-none-eabi-gcc)
-if(ARM_GCC MATCHES "ARM_GCC-NOTFOUND")
-    message(FATAL_ERROR "Cannot find arm-none-eabi-gcc install, therefore unable to assign sysroot for cross-compiling")
-endif(ARM_GCC MATCHES "ARM_GCC-NOTFOUND")
-
-execute_process(COMMAND bash "-c" "${ARM_GCC} --print-sysroot | tr -d '\n'"
-        OUTPUT_VARIABLE ARM_GCC_SYSROOT_STDOUT
-        ERROR_VARIABLE ARM_GCC_SYSROOT_STDERR)
-
-set(CMAKE_SYSROOT "${ARM_GCC_SYSROOT_STDOUT}")
-message(STATUS "Found ARM sysroot at ${ARM_GCC_SYSROOT_STDOUT}")
+find_program(CMAKE_AR NAMES llvm-ar
+                            llvm-ar-11
+                            llvm-ar-10
+                            llvm-ar-9)
+if (CMAKE_AR MATCHES "CMAKE_AR-NOTFOUND")
+    message(FATAL_ERROR "Cannot find Clang assembler, unable to build .s files")
+endif()
+# find_program(ARM_GCC arm-none-eabi-gcc)
+# if(ARM_GCC MATCHES "ARM_GCC-NOTFOUND")
+#     message(FATAL_ERROR "Cannot find arm-none-eabi-gcc install, therefore unable to assign sysroot for cross-compiling")
+# endif(ARM_GCC MATCHES "ARM_GCC-NOTFOUND")
