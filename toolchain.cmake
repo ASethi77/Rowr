@@ -18,6 +18,7 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${NOSTDLIB_FLAG} ${ARCH_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${NOSTDLIB_FLAG} ${ARCH_FLAGS}")
 
 find_program(CMAKE_AR NAMES llvm-ar
+                            llvm-ar-12
                             llvm-ar-11
                             llvm-ar-10
                             llvm-ar-9)
