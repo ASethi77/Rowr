@@ -2,14 +2,16 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../nrf5_sdk_17.0.2"
 		}
 	],
 	"settings": {
 		"cmake.configureArgs": [
 			"-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/toolchain.cmake"
-		]
+		],
+		"files.associations": {
+			"nrf.h": "c",
+			"nrf51.h": "c",
+			"core_cm0.h": "c"
+		}
 	}
 }
