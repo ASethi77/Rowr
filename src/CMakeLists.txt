@@ -30,5 +30,5 @@ add_custom_command(
         TARGET blinky
         COMMAND ${ELF_SIZE_COMMAND} blinky
         COMMAND ${ELF_OBJCOPY_COMMAND} -O ihex blinky blinky.hex
-        COMMAND ${OBJCOPY_COMMAND} -O binary blinky blinky.bin
+        COMMAND ${ELF_OBJCOPY_COMMAND} -O binary blinky blinky.bin
 )
