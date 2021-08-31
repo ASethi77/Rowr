@@ -1,21 +1,4 @@
 set(NRF_SDK_ROOT "${PROJECT_SOURCE_DIR}/nrf51_sdk")
-# set(NRF_SDK_INCLUDE_DIRECTORIES
-#     ${NRF_SDK_ROOT}/components/boards
-
-#     ${NRF_SDK_ROOT}/components/device
-
-#     ${NRF_SDK_ROOT}/components/drivers_nrf/adc
-#     ${NRF_SDK_ROOT}/components/drivers_nrf/delay
-#     ${NRF_SDK_ROOT}/components/drivers_nrf/hal
-#     ${NRF_SDK_ROOT}/components/drivers_nrf/nrf_soc_nosd
-
-#     ${NRF_SDK_ROOT}/components/toolchain
-#     ${NRF_SDK_ROOT}/components/toolchain/cmsis/include
-
-#     ${NRF_SDK_ROOT}/components/libraries/log
-#     ${NRF_SDK_ROOT}/components/libraries/log/src
-#     ${NRF_SDK_ROOT}/components/libraries/util
-#     )
 
 set(NRF_SDK_INCLUDE_DIRECTORIES
     ${NRF_SDK_ROOT}/components/drivers_nrf/comp 
