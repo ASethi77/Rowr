@@ -28,6 +28,7 @@ add_compile_options(
     -Werror
     -O3
     -g3
+    -ffreestanding
     -ffunction-sections
     -fdata-sections
     -fno-strict-aliasing
