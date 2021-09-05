@@ -5,8 +5,8 @@ set(CMAKE_CROSSCOMPILING TRUE)
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_PROCESSOR arm)
 
-set(GCC_BINS "/opt/gcc-arm-none-eabi-9/bin")
-set(GCC_ROOT "/opt/gcc-arm-none-eabi/9.2.1")
+set(GCC_BINS "/bin")
+set(GCC_ROOT "/usr/lib/gcc-arm-none-eabi/9.2.1")
 set(ELF_SIZE_COMMAND "${GCC_BINS}/arm-none-eabi-size")
 set(ELF_OBJCOPY_COMMAND "${GCC_BINS}/arm-none-eabi-objcopy")
 
