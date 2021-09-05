@@ -191,13 +191,13 @@ __ASM volatile (
        " NOP\n"
 #endif
 "2:\n"
-       " SUBS %0, %0, #1\n"
+       " SUBS %[SleepCyclesRemaining], %[SleepCyclesRemaining], #1\n"
        " BNE.n 1b\n"
 #if __CORTEX_M == (0x00U)
 #ifdef __GNUC__
     ".syntax divided\n"
 #endif
-    :"+l" (number_of_us) :
+    : [SleepCyclesRemaining] "+l" (number_of_us) :
 #else
     :"+r" (number_of_us) :
 #endif
