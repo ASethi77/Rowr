@@ -21,10 +21,14 @@
  *
  */
 
-#include <stdbool.h>
-#include <stdint.h>
-#include "nrf_delay.h"
+#include <cstdbool>
+#include <cstdint>
+
+extern "C"
+{
 #include "boards.h"
+#include "nrf_delay.h"
+}
 
 /**
  * @brief Function for application main entry.

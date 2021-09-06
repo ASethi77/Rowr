@@ -1,5 +1,5 @@
 set(BLINKY_SOURCES
-    main.c
+    main.cpp
     )
 
 # set(BLINKY_OUTFILE blinky)
@@ -18,6 +18,13 @@ target_compile_definitions(blinky PUBLIC
     SW_DISABLE0
 )
 
+target_compile_options(blinky
+  PUBLIC $<$<COMPILE_LANGUAGE:CXX>:
+    -fno-exceptions
+    -fno-rtti
+    -nostdlib
+    >
+)
 target_link_directories(blinky PUBLIC
     ${NRF_SDK_ROOT}/components/toolchain/gcc
 )
