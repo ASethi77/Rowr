@@ -9,7 +9,8 @@
 			"-DCMAKE_TOOLCHAIN_FILE=toolchain.cmake"
 		],
 		"files.associations": {
-			"boards.h": "c"
+			"boards.h": "c",
+			"radio_config.h": "c"
 		}
 	}
 }

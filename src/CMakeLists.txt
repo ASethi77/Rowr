@@ -1,4 +1,5 @@
 set(BLINKY_SOURCES
+    nrf51_gpio.cpp
     main.cpp
     )
 

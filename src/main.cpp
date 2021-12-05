@@ -30,22 +30,51 @@ extern "C"
 #include "nrf_delay.h"
 }
 
+#include "nrf51_gpio.h"
+
 /**
  * @brief Function for application main entry.
  */
 int main(void)
 {
+    const size_t NUM_LEDS {4};
+    const size_t led_pins[NUM_LEDS] {21, 22, 23, 24};
+
+    for (auto led : led_pins)
+    {
+        newhal_nrf_gpio_set_direction(led, NrfGpioPinDirection::OUT);
+    }
+
     /* Configure board. */
-    bsp_board_leds_init();
+    // bsp_board_leds_init();
 
     /* Toggle LEDs. */
     while (true)
     {
-        for (int i = 0; i < LEDS_NUMBER; i++)
-        {
-            bsp_board_led_invert(i);
-            nrf_delay_ms(100);
-        }
+        newhal_nrf_gpio_set_pin(led_pins[0]);
+        newhal_nrf_gpio_set_pin(led_pins[3]);
+
+        nrf_delay_ms(200);
+
+        newhal_nrf_gpio_set_pin(led_pins[1]);
+        newhal_nrf_gpio_set_pin(led_pins[2]);
+
+        nrf_delay_ms(200);
+
+        newhal_nrf_gpio_clear_pin(led_pins[0]);
+        newhal_nrf_gpio_clear_pin(led_pins[3]);
+
+        nrf_delay_ms(200);
+
+        newhal_nrf_gpio_clear_pin(led_pins[1]);
+        newhal_nrf_gpio_clear_pin(led_pins[2]);
+
+        nrf_delay_ms(200);
+        // for (size_t i = 0; i < NUM_LEDS; i++)
+        // {
+        //     bsp_board_led_invert(i);
+        //     nrf_delay_ms(100);
+        // }
     }
 }
 
